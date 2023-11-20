@@ -1,10 +1,6 @@
 import { trefoil } from 'ldrs'
 
-
-
-
- 
-const LoaderComponent = () => {
+export const LoaderComponent = () => {
   trefoil.register()
   return (  
   <div
@@ -27,4 +23,3 @@ const LoaderComponent = () => {
   )
 };
 
-export default LoaderComponent

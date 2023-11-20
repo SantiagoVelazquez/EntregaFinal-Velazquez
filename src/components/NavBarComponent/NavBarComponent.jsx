@@ -5,7 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBarComponent.css'
 import CartWidgetComponent from '../CartWidgetComponent/CartWidgetComponent';
 
-const NavBarComponent = () => {
+export const NavBarComponent = () => {
 
     return (
 
@@ -29,7 +29,3 @@ const NavBarComponent = () => {
     </Navbar>
   );
 }
-
-
-
-export default NavBarComponent;

@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "./ItemListContainer.css"
 
-const ItemListContainer = ({products}) => {
+export const ItemListContainer = ({products}) => {
     return (
         <div className='cards'>
             {products.map((product) => {
@@ -21,4 +21,3 @@ const ItemListContainer = ({products}) => {
         );
 };
 
-export default ItemListContainer;
