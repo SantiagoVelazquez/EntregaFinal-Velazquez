@@ -1,8 +1,11 @@
-import { helix } from "ldrs";
+import { trefoil } from 'ldrs'
+
+
+
 
  
 const LoaderComponent = () => {
-  helix.register();
+  trefoil.register()
   return (  
   <div
   style={{
@@ -12,7 +15,14 @@ const LoaderComponent = () => {
     height: "100vh",
     width: "100vw",
   }}>
-    <l-helix size="45" speed="2.5" color="black"></l-helix>
+    <l-trefoil
+  size="70"
+  stroke="4"
+  stroke-length="0.15"
+  bg-opacity="0.1"
+  speed="1.4" 
+  color="black" 
+></l-trefoil>
   </div>
   )
 };
