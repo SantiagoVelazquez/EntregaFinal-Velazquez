@@ -1,8 +1,35 @@
-.cards{
+.cardsContainer{
     display: flex;
     flex-wrap: wrap;
     margin: 15px;
 }
-.card-body{
-    padding: 60px;
+.cards{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.card{
+    margin: 20px;
+    padding: 5px;
+    height: 420px;
+  
+}
+.card-img-top{
+    height: 150px;
+
+}
+.btn{
+    background-color: darksalmon;
+    border-color: aliceblue;
+    position: relative;
+    
+}
+.me-auto a{
+    margin-left: 15;
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    color: var(--bs-nav-link-color);
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
