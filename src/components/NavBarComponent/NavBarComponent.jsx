@@ -5,23 +5,41 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBarComponent.css'
 import CartWidgetComponent from '../CartWidgetComponent/CartWidgetComponent';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const NavBarComponent = () => {
-
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/products/categories")
+      .then((res) => setCategories(res.data))
+      .catch((error) => console.log(error));
+  }, []);
     return (
 
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
+      <Link to="/">
         <img src="../multimedia/img/Logo.png" alt="Logo de la empresa" className='logo'/>
+      </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link to="/">Inicio</Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Categorias" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Fragancias</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Sahumarios</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Accesorios</NavDropdown.Item>
+            <NavDropdown title="Categorías" id="basic-nav-dropdown">
+              {categories.map((category, index) => {
+                return (
+                  <NavDropdown.Item key={index}>
+                    <Link
+                      to={`/category/${category}`}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      {category}
+                    </Link>
+                  </NavDropdown.Item>
+                );
+              })}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

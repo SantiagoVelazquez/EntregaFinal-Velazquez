@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export function getAllProducts (limit= 5) {
+export function getAllProducts (limit= 12) {
     return axios.get(`https://dummyjson.com/products?limit=${limit}`)
 } 
 
