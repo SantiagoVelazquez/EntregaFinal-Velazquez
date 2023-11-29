@@ -1,7 +1,8 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "./ItemListContainer.css"
 import { Link } from 'react-router-dom';
+import { ItemCount } from '../ItemCount';
+
 
 export const ItemListContainer = ({products}) => {
     return (
@@ -15,8 +16,8 @@ export const ItemListContainer = ({products}) => {
                 <Card.Body className='cards'>
                     <Card.Title>{product.title}</Card.Title>
                     <Card.Text>{product.description}</Card.Text>
-                    <Button variant="primary">Agregar al carrito</Button>
                 </Card.Body>
+                <ItemCount />
             </Card>
             );
             })}

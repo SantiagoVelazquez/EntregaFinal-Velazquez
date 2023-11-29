@@ -3,10 +3,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBarComponent.css'
-import CartWidgetComponent from '../CartWidgetComponent/CartWidgetComponent';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { CartWidgetComponent } from '../CartWidgetComponent';
 
 export const NavBarComponent = () => {
   const [categories, setCategories] = useState([]);

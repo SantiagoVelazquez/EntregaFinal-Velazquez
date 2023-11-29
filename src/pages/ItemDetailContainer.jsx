@@ -1,12 +1,12 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-
 import { useParams } from 'react-router-dom'
 import { useSingleProduct } from '../hooks/useProducts'
+import { ItemCount } from '../components';
 
 export const ItemDetailContainer = () => {
     const {productId} = useParams()
-    const {product, loading, error} = useSingleProduct(productId);
+    const {product, loading, error} = useSingleProduct("products", productId);
 
   return (
     <Card key={product.id} style={{ width: '18rem' }}>
@@ -14,8 +14,8 @@ export const ItemDetailContainer = () => {
          <Card.Body>
              <Card.Title>{product.title}</Card.Title>
             <Card.Text>{product.description}</Card.Text>
-             
         </Card.Body>
+            <ItemCount />
     </Card> 
   )
 }
