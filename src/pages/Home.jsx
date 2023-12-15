@@ -5,7 +5,7 @@ import { LoaderComponent, ItemListContainer } from '../components';
 
 export const Home = () => {
     const {products, loading, error} = useAllProducts("products");
-    console.log(products);
+  
   return (
     <div>
          {loading ? (

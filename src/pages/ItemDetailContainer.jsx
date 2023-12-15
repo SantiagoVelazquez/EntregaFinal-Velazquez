@@ -2,7 +2,9 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { useSingleProduct } from '../hooks/useProducts'
-import { ItemCount } from '../components';
+import { ItemQuantitySelector, AddItemButton } from '../components'
+
+
 
 export const ItemDetailContainer = () => {
     const {productId} = useParams()
@@ -15,7 +17,8 @@ export const ItemDetailContainer = () => {
              <Card.Title>{product.title}</Card.Title>
             <Card.Text>{product.description}</Card.Text>
         </Card.Body>
-            <ItemCount />
+            <ItemQuantitySelector />
+          
     </Card> 
   )
 }

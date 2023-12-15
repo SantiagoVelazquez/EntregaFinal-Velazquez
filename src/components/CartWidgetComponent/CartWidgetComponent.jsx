@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../context';
 
 export const CartWidgetComponent = () => {
-    const {qtyItems} = useContext(CartContext)
+    const {itemCount} = useContext(CartContext)
     
     const iconeStyle = {
         paddingRight: "10px",
@@ -13,7 +13,7 @@ export const CartWidgetComponent = () => {
     return(
         <div>
             <FontAwesomeIcon style={iconeStyle} icon={faShoppingCart} />
-            <span>{qtyItems}</span>
+            <span>{itemCount}</span>
         </div>
     )
 };
